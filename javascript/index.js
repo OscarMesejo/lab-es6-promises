@@ -116,25 +116,31 @@ async function makeBroccoli() {
 
 makeBroccoli()
 
+const step0 = obtainInstruction('brusselsSprouts', 0);
+const step1 = obtainInstruction('brusselsSprouts', 1);
+const step2 = obtainInstruction('brusselsSprouts', 2);
+const step3 = obtainInstruction('brusselsSprouts', 3);
+const step4 = obtainInstruction('brusselsSprouts', 4);
+const step5 = obtainInstruction('brusselsSprouts', 5);
+const step6 = obtainInstruction('brusselsSprouts', 6);
+const step7 = obtainInstruction('brusselsSprouts', 7);
+
 Promise.all([step0, step1, step2, step3, step4, step5, step6, step7])
 
-.then(()=>{
-  const step0 = obtainInstruction('brusselsSprouts', 0);
-  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step0}</li>`
-  const step1 = obtainInstruction('bbrusselsSprouts', 1);
-  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step1}</li>`
-  const step2 = obtainInstruction('brusselsSprouts', 2);
-  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step2}</li>`
-  const step3 = obtainInstruction('brusselsSprouts', 3);
-  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step3}</li>`
-  const step4 = obtainInstruction('brusselsSprouts', 4);
-  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step4}</li>`
-  const step5 = obtainInstruction('brusselsSprouts', 5);
-  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step5}</li>`
-  const step6 = obtainInstruction('brusselsSprouts', 6);
-  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step6}</li>`
-  const step7 = obtainInstruction('brusselsSprouts', 7);
-  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step7}</li>`
+.then((response)=>{
+  console.log(response);
+  response.forEach((instruction)=>{
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${instruction}</li>`
+  })
+  
+  // 
+  // document.querySelector("#brusselsSprouts").innerHTML += `<li>${step1}</li>`
+  // document.querySelector("#brusselsSprouts").innerHTML += `<li>${step2}</li>`
+  // document.querySelector("#brusselsSprouts").innerHTML += `<li>${step3}</li>`
+  // document.querySelector("#brusselsSprouts").innerHTML += `<li>${step4}</li>`
+  // document.querySelector("#brusselsSprouts").innerHTML += `<li>${step5}</li>`
+  // document.querySelector("#brusselsSprouts").innerHTML += `<li>${step6}</li>`
+  // document.querySelector("#brusselsSprouts").innerHTML += `<li>${step7}</li>`
   
 })
 
@@ -143,7 +149,7 @@ Promise.all([step0, step1, step2, step3, step4, step5, step6, step7])
   document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
 })
 
-makeBrusselsSprouts()
+// makeBrusselsSprouts()
 
 
   
